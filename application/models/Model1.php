@@ -10,6 +10,12 @@ class Model1 extends CI_Model {
 		return $consulta->result();
 	}
 
+	public function insertar($data)
+	{
+		//metodo insert (nombre de tabla, data)
+		return $this->db->insert("marca",$data);
+	}
+
 
 
 

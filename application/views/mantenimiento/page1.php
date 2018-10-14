@@ -1,13 +1,12 @@
-
-        <!-- =============================================== -->
-
-        <!-- Content Wrapper. Contains page content -->
+<!-- =============================================== -->
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
             <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-            Mantenimiento
-                </h1>
+            <h1>
+                Mantenimiento
+            </h1>
+            <a href="<?php echo base_url().'index.php/mantenimiento/mostrar_formulario' ?>" class="btn btn-primary" >Agregar Nuevo</a>
             </section>
             <!-- Main content -->
             <section class="content">
@@ -30,7 +29,7 @@
                                         <td><?php echo $datos->id_marca ?></td>
                                         <td><?php echo $datos->marca ?></td>
                                         <td>
-                                            <a href="<?php echo base_url().'mantenimiento/editar/'.$datos->id_marca ?>" class="btn btn-primary">Editar</a>
+                                            <a href="<?php echo base_url().'index.php/mantenimiento/editar/'.$datos->id_marca ?>" class="btn btn-primary">Editar</a>
                                             <a href="" class="btn btn-danger">Eliminar</a>
                                         </td>
                                     </tr>

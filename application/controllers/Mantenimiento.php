@@ -17,4 +17,26 @@ class Mantenimiento extends CI_Controller {
 		$this->load->view("layout/footer");
 
 	}
+
+	public function mostrar_formulario()
+	{
+		//redireccion pagina de formulario
+		$this->load->view("layout/header");
+		$this->load->view("layout/aside");
+		$this->load->view("mantenimiento/form1");
+		$this->load->view("layout/footer");
+	}
+
+	public function guardar()
+	{
+		//capturamos los valores del formulaio
+		$marca = $this->input->post("marca");
+		//ordenamos en un array asociativo
+		$data = array (
+			'marca' =>$marca,
+			'estado' => '1'
+		);
+		$this->Model1->insertar($data);
+		redirect(base_url().'index.php/mantenimiento');
+	}
 }
