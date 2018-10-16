@@ -39,4 +39,29 @@ class Mantenimiento extends CI_Controller {
 		$this->Model1->insertar($data);
 		redirect(base_url().'index.php/mantenimiento');
 	}
+
+	public function editar($id)
+	{
+		$data = array(
+			'marca' => $this->Model1->encontrar($id),
+		);
+		//redireccion pagina de formulario
+		$this->load->view("layout/header");
+		$this->load->view("layout/aside");
+		$this->load->view("mantenimiento/form1",$data);
+		$this->load->view("layout/footer");
+	}
+
+	public function actualizar()
+	{
+
+		$marca = $this->input->post("marca");
+		$id = $this->input->post("id");
+		//ordenamos en un array asociativo
+		$data = array (
+			'marca' =>$marca
+		);
+		$this->Model1->actualizar($id,$data);
+		redirect(base_url().'index.php/mantenimiento');
+	}
 }
